@@ -2,6 +2,8 @@
 
 ### {{ site.time | date: '%B %d, %Y' }} Integrating SSSD with Active Directory
 
+[back](https://alinruisu.github.io/)
+
 **Enviornment**
 Domain Name Warcraft.local  
 Active Directory Windows 2016 (2016 forrest level)  
@@ -11,12 +13,12 @@ CentOS 7 Linux - Linux linuxclient.warcraft.local 3.10.0-957.10.1.el7.x86_64 #1 
 - Environmental Requirements
 
 - Base package
-'''console
+```console
 yum install  -y
-'''
+```
 
 - Realm Discovery
-'''console
+```console
 [root@linuxclient sssd]# realm discover warcraft.local
 warcraft.local
   type: kerberos
@@ -32,15 +34,15 @@ warcraft.local
   required-package: samba-common-tools
   login-formats: %U
   login-policy: allow-realm-logins
-'''
+```
 
 - Realm Join
-'''console
+```console
  realm join --user=administrator warcraft.local
-'''
+```
 
 - Validate Realm Information
-'''console
+```console
 [root@linuxclient sssd]# realm list
 warcraft.local
   type: kerberos
@@ -59,9 +61,9 @@ warcraft.local
 
 [root@linuxclient sssd]# id rsu@warcraft.local
 uid=1159801104(rsu) gid=1159800513(domain users) groups=1159800513(domain users),1159801105(linuxadmins)
-'''
+```
 - Modify SSSD Configuration 
-'''console
-'''
+```console
+```
 - 
 
