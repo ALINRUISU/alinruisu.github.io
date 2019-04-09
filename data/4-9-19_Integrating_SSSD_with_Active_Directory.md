@@ -94,7 +94,7 @@ warcraft.local
 uid=1159801104(rsu) gid=1159800513(domain users) groups=1159800513(domain users),1159801105(linuxadmins)
 ```
 
-- Modify SSSD Configuration 
+- Modify SSSD Configuration
 ```console
 [root@linuxclient sssd]# cat sssd.conf
 
@@ -116,8 +116,8 @@ use_fully_qualified_names = False
 fallback_homedir = /home/%u
 access_provider = ad
 ad_access_filter = (memberOf=cn=linuxadmins,cn=Users,dc=warcraft,dc=local)
-
 ```
+
 - Update Sudoers
 ```console
 [root@freeipa sudoers.d]# cat /etc/sudoers.d/sudoers
