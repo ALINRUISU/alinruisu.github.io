@@ -10,8 +10,7 @@ Active Directory Windows 2016 (2016 forrest level)
 CentOS 7 Linux - Linux linuxclient.warcraft.local 3.10.0-957.10.1.el7.x86_64 #1 SMP Mon Mar 18 15:06:45 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux  
 
 
-- Environmental Requirements
-Ensure that from a base configuration perspective the linux server is able to resolve the domain in question. use the following for a quick test
+- Environmental Requirements and Validation
 ```console
 [root@linuxclient sssd]#  dig -t SRV _ldap._tcp.ad.warcraft.local
 
