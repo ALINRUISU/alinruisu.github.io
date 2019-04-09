@@ -123,6 +123,9 @@ ad_access_filter = (memberOf=cn=linuxadmins,cn=Users,dc=warcraft,dc=local)
 %linuxadmins ALL=(ALL)       ALL
 ```
 
+- Troubleshoot
+Clearing the cache directory containing the Kerberos tickets and cache of AD objects then restarting the service.
+
 - Leaving the domain
 ```
 [root@freeipa sudoers.d]# realm leave warcraft.local
