@@ -11,7 +11,7 @@ CentOS 7 Linux - Linux linuxclient.warcraft.local 3.10.0-957.10.1.el7.x86_64 #1 
 
 
 - Environmental Requirements and Validation
-```console
+```
 [root@linuxclient sssd]#  dig -t SRV _ldap._tcp.ad.warcraft.local
 
 ; <<>> DiG 9.9.4-RedHat-9.9.4-73.el7_6 <<>> -t SRV _ldap._tcp.ad.warcraft.local
@@ -40,15 +40,15 @@ PING warcraft.local (192.168.0.100) 56(84) bytes of data.
 ```
 
 - Base package
-```console
+```
 yum install sssd realmd oddjob oddjob-mkhomedir adcli samba-common samba-common-tools krb5-workstation openldap-clients policycoreutils-python -y
 ```
 - Reboot the system
-```console
+```
 Reboot
 ```
 - Realm Discovery
-```console
+```
 [root@linuxclient sssd]# realm discover warcraft.local
 warcraft.local
   type: kerberos
@@ -67,12 +67,12 @@ warcraft.local
 ```
 
 - Realm Join
-```console
+```
  realm join --computer-ou="ou=linux,dc=warcraft,dc=local" --user=administrator warcraft.local
 ```
 
 - Validate Realm Information
-```console
+```
 [root@linuxclient sssd]# realm list
 warcraft.local
   type: kerberos
@@ -94,7 +94,7 @@ uid=1159801104(rsu) gid=1159800513(domain users) groups=1159800513(domain users)
 ```
 
 - Modify SSSD Configuration
-```console
+```
 [root@linuxclient sssd]# cat sssd.conf
 
 [sssd]
@@ -118,7 +118,7 @@ ad_access_filter = (memberOf=cn=linuxadmins,cn=Users,dc=warcraft,dc=local)
 ```
 
 - Update Sudoers
-```console
+```
 [root@freeipa sudoers.d]# cat /etc/sudoers.d/sudoers
 %linuxadmins ALL=(ALL)       ALL
 ```
