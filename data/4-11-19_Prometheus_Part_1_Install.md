@@ -68,7 +68,6 @@ systemctl install prometheus
 - Configure Node Exporter
 ```
 [root@jenkins system]# cat node_exporter.service
-# -*- mode: conf -*-
 
 [Unit]
 
